@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Play : MonoBehaviour
 {
-    [SerializeField]
-    TextAsset _noteSheet;
+    
+    private TextAsset _noteSheet;
+   
     [SerializeField]
     float _quarter;
-    [SerializeField]
-    float _noteVelocity;
+    
+    public static float _noteVelocity = 0.85f;
 
     [SerializeField]
     GameObject _panel;
@@ -32,11 +33,16 @@ public class Play : MonoBehaviour
     int _currentNote;
 
     public static bool isPlaying;
-    public static string pianoPiece;
+    private string _pianoPiece;
+    public static string piece = "Ode To Joy";
+
+    [SerializeField] GameObject videoPlayer1;
+    [SerializeField] GameObject videoPlayer2;
+
 
     void Awake()
     { 
-        SetPianoPiece("Ode to Joy");
+        SetPianoPiece(piece);
 
         string txt = _noteSheet.text;
         _lines = txt.Split('\n');
@@ -52,6 +58,17 @@ public class Play : MonoBehaviour
         if (isPlaying)
         {
             SetVelocity();
+
+            if(piece == "Elise")
+            {
+                videoPlayer1.SetActive(false);
+                videoPlayer2.SetActive(true);
+            }
+            if(piece == "Ode To Joy")
+            {
+                videoPlayer2.SetActive(false);
+                videoPlayer1.SetActive(true);   
+            }
 
             if (Time.time - _lastUpdate >= _quarter)
             {
@@ -104,6 +121,13 @@ public class Play : MonoBehaviour
                 _lastUpdate = Time.time;
             }
         }
+        else{
+            videoPlayer1.SetActive(false);
+            videoPlayer2.SetActive(false);
+            SetPianoPiece(piece);
+            string txt = _noteSheet.text;
+            _lines = txt.Split('\n');
+        }
     }
 
     public void StartNotes(int firstNote = 0)
@@ -114,8 +138,9 @@ public class Play : MonoBehaviour
 
     public void SetPianoPiece(string piece)
     {
-        pianoPiece = piece;
-        _noteSheet = (TextAsset)Resources.Load(pianoPiece);
+        _pianoPiece = piece;
+        _noteSheet = (TextAsset)Resources.Load(_pianoPiece);
+        
     }
 
     public void SetVelocity()

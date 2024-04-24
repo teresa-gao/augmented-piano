@@ -10,6 +10,7 @@ public class UI : MonoBehaviour
     public TMP_Text title;
     public TMP_Text buttonText;
     public TMP_Dropdown dropdown;
+    public TMP_Dropdown dropdown2;
 
     void Start()
     {
@@ -20,7 +21,14 @@ public class UI : MonoBehaviour
     public void TogglePiece(TMP_Dropdown dropdown)
     {
         int index = dropdown.value;
-        Play.pianoPiece = dropdown.options[index].text;
+        Play.piece = dropdown.options[index].text;
+    }
+
+    public void TogglePiece2(TMP_Dropdown dropdown2)
+    {
+        int index = dropdown2.value;
+        Debug.Log((dropdown2.options[index].text));
+        Play._noteVelocity = float.Parse(dropdown2.options[index].text);
     }
 
     public void ClickButton()

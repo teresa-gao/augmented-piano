@@ -31,8 +31,8 @@ public class Play : MonoBehaviour
     string[] _lines;
     int _currentNote;
 
-    public bool _isPlaying;
-    public string _pianoPiece;
+    public static bool isPlaying;
+    public static string pianoPiece;
 
     void Awake()
     { 
@@ -43,13 +43,13 @@ public class Play : MonoBehaviour
 
         _currentNote = 0;
 
-        _isPlaying = true;
+        isPlaying = false;
         _lastUpdate = Time.time;
     }
 
     private void Update()
     {
-        if (_isPlaying)
+        if (isPlaying)
         {
             SetVelocity();
 
@@ -108,14 +108,14 @@ public class Play : MonoBehaviour
 
     public void StartNotes(int firstNote = 0)
     {
-        _isPlaying = false;
+        isPlaying = false;
         _currentNote = firstNote;
     }
 
     public void SetPianoPiece(string piece)
     {
-        _pianoPiece = piece;
-        _noteSheet = (TextAsset)Resources.Load(_pianoPiece);
+        pianoPiece = piece;
+        _noteSheet = (TextAsset)Resources.Load(pianoPiece);
     }
 
     public void SetVelocity()
@@ -126,11 +126,11 @@ public class Play : MonoBehaviour
 
     public void StartPlaying()
     {
-        _isPlaying = true;
+        isPlaying = true;
     }
 
     public void PausePlaying()
     {
-        _isPlaying = false;
+        isPlaying = false;
     }
 }

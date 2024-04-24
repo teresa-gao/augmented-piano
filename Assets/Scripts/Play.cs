@@ -36,7 +36,7 @@ public class Play : MonoBehaviour
 
     void Awake()
     { 
-        SetPianoPiece("Ode To Joy");
+        SetPianoPiece("Ode to Joy");
 
         string txt = _noteSheet.text;
         _lines = txt.Split('\n');

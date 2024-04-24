@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
 {
     public TMP_Text title;
     public TMP_Text buttonText;
+    public TMP_Dropdown dropdown;
 
     void Start()
     {
@@ -16,9 +17,10 @@ public class UI : MonoBehaviour
         buttonText.text = "Play";
     }
 
-    public void TogglePiece(string piece)
+    public void TogglePiece(TMP_Dropdown dropdown)
     {
-        Play.pianoPiece = piece;
+        int index = dropdown.value;
+        Play.pianoPiece = dropdown.options[index].text;
     }
 
     public void ClickButton()

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 32946038}
   - component: {fileID: 32946037}
   - component: {fileID: 32946036}
+  - component: {fileID: 32946040}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -227,6 +228,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &32946040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32946035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fde00cdff411848913eebdfa05975c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 89155947}
+  buttonText: {fileID: 1326930641}
+  dropdown: {fileID: 2100127047}
 --- !u!1 &89155945
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "F\xFCr Elise"
+  m_text: Ode to Joy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1054,89 +1070,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1105395129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1105395131}
-  - component: {fileID: 1105395130}
-  - component: {fileID: 1105395132}
-  - component: {fileID: 1105395133}
-  m_Layer: 0
-  m_Name: UIHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1105395130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105395129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34fde00cdff411848913eebdfa05975c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: {fileID: 0}
-  button: {fileID: 0}
---- !u!4 &1105395131
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105395129}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1105395132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105395129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e85b2ade8cfdf84ea954714c72eb249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _noteSheet: {fileID: 0}
-  _quarter: 0
-  _noteVelocity: 0
-  _panel: {fileID: 0}
-  _noteOrigin: {fileID: 0}
-  _noteTarget: {fileID: 0}
-  _note: {fileID: 0}
-  _leftHand: {r: 0, g: 0, b: 0, a: 0}
-  _rightHand: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &1105395133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105395129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34fde00cdff411848913eebdfa05975c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: {fileID: 89155947}
-  button: {fileID: 1147833796}
 --- !u!1001 &1107454176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1367,7 +1300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1105395133}
+      - m_Target: {fileID: 32946040}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
         m_MethodName: ClickButton
         m_Mode: 1
@@ -1522,7 +1455,7 @@ GameObject:
   - component: {fileID: 1326930642}
   - component: {fileID: 1326930641}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PlayButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2620,20 +2553,20 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "F\xFCr Elise"
-      m_Image: {fileID: 0}
     - m_Text: Ode to Joy
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    - m_Text: "F\xFCr Elise"
+      m_Image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 32946040}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: TogglePiece
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2100127047}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2688,4 +2621,3 @@ SceneRoots:
   - {fileID: 1138339710}
   - {fileID: 866727963}
   - {fileID: 32946039}
-  - {fileID: 1105395131}
